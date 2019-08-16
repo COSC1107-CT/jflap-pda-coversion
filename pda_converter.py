@@ -3,17 +3,38 @@ from __future__ import unicode_literals
 from __future__ import division
 from __future__ import absolute_import
 
-import os
+import os, sys
 import xml.etree.ElementTree as ET
 import argparse
 
-
+# Name of the new final state
 FINAL_STATE_NAME = 'qnf'
+
+# The incremental ID of the new final state
+# i.e. if the highest state id is 5, new final state will be id 6 if increment is set to 1
 FINAL_STATE_ID_INCREMENT = 1
+
+# x position offset of the new final state from the largest x offset of existing states.
+# i.e. if the right most state in the existing PDA is at position 200, new final state's
+#      x position will be 300 if the FINAL_STATE_X_INCREMENT is set to 100.
 FINAL_STATE_X_INCREMENT = 100
+
+# y position offset of the new final state from the largest x offset of existing states.
+# i.e. if the right most state in the existing PDA is at position 200, new final state's
+#      y position will be 300 if the FINAL_STATE_Y_INCREMENT is set to 100.
 FINAL_STATE_Y_INCREMENT = 100
 
-
+"""
+Function to compute the attributes of the new final state.
+Takes in a list of xml state Elements
+Returns a tuple of the following
+(
+  ID of the new final state,
+  NAME of the new final state,
+  X location of the new final state,
+  Y location of the new final state
+)
+"""
 def get_new_final_state_attr(states):
     highest_id = 0
     highest_x = 0
