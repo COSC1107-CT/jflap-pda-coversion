@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><!--Created with JFLAP 6.4.--><structure>
+	<type>pda</type>
+	<automaton>
+		<!--The list of states.-->
+		<state id="0" name="q0">
+			<x>119.0</x>
+			<y>176.0</y>
+			<initial/>
+		</state>
+		<state id="1" name="q1">
+			<x>271.0</x>
+			<y>57.0</y>
+			<final/>
+		</state>
+		<state id="2" name="q2">
+			<x>392.0</x>
+			<y>184.0</y>
+		</state>
+		<state id="3" name="q3">
+			<x>558.0</x>
+			<y>182.0</y>
+			<final/>
+		</state>
+		<!--The list of transitions.-->
+		<transition>
+			<from>0</from>
+			<to>0</to>
+			<read>a</read>
+			<pop/>
+			<push>A</push>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>1</to>
+			<read>b</read>
+			<pop/>
+			<push>B</push>
+		</transition>
+		<transition>
+			<from>2</from>
+			<to>2</to>
+			<read>c</read>
+			<pop>B</pop>
+			<push/>
+		</transition>
+		<transition>
+			<from>0</from>
+			<to>1</to>
+			<read/>
+			<pop/>
+			<push/>
+		</transition>
+		<transition>
+			<from>2</from>
+			<to>3</to>
+			<read/>
+			<pop/>
+			<push/>
+		</transition>
+		<transition>
+			<from>3</from>
+			<to>3</to>
+			<read>a</read>
+			<pop>B</pop>
+			<push/>
+		</transition>
+		<transition>
+			<from>3</from>
+			<to>3</to>
+			<read>b</read>
+			<pop>A</pop>
+			<push/>
+		</transition>
+		<transition>
+			<from>1</from>
+			<to>2</to>
+			<read>b</read>
+			<pop/>
+			<push>B</push>
+		</transition>
+	</automaton>
+</structure>
